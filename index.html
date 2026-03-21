@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sofia — Jazz Vocalist</title>
+    <meta
+      name="description"
+      content="Sofia — elegant jazz vocalist offering refined live performances for private events, sophisticated venues, and unforgettable evenings."
+    />
+    <meta property="og:title" content="Sofia — Jazz Vocalist" />
+    <meta
+      property="og:description"
+      content="Old-school jazz glamour for modern nights."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/hero.jpg" />
+    <meta name="theme-color" content="#090909" />
+    <link rel="preload" as="image" href="assets/images/hero.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#home">Sofia</a>
+        <div class="header-controls">
+          <div class="language-switch" aria-label="Language switcher">
+            <button class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+            <button class="lang-btn" data-lang="zh-HK" aria-pressed="false">繁中</button>
+            <button class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+          </div>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+
+      <nav class="site-menu" id="site-menu" aria-hidden="true">
+        <a href="#home" data-i18n="nav.home">Home</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#media" data-i18n="nav.media">Media</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <main>
+        <section class="hero" id="home">
+          <div class="hero-stage">
+            <img class="hero-image" src="assets/images/hero.jpg" alt="Sofia singing into a microphone on stage" fetchpriority="high" />
+            <div class="hero-overlay"></div>
+            <div class="curtain curtain-left" aria-hidden="true"></div>
+            <div class="curtain curtain-right" aria-hidden="true"></div>
+          </div>
+          <div class="hero-content section-inner">
+            <p class="eyebrow" data-i18n="hero.eyebrow">Jazz Vocalist</p>
+            <span class="hero-divider" aria-hidden="true"></span>
+            <h1 data-i18n="hero.title">Sofia</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">
+              Old-school jazz glamour for modern nights.
+            </p>
+            <a class="button-primary" href="#contact" data-i18n="hero.cta">Get in Touch</a>
+          </div>
+          <a class="scroll-hint" href="#about" data-i18n="hero.scroll">Scroll</a>
+        </section>
+
+        <section class="about section" id="about">
+          <div class="section-inner about-grid">
+            <div class="section-copy">
+              <p class="section-kicker" data-i18n="about.kicker">About</p>
+              <h2 data-i18n="about.heading">About Sofia</h2>
+              <p data-i18n="about.p1">
+                Sofia is a jazz vocalist and songwriter known for her elegant stage presence,
+                captivating voice, and timeless musical style. Rooted in jazz, soul, and R&amp;B,
+                she brings together old-school glamour, emotional depth, and real live
+                performance — creating an atmosphere that feels both refined and alive.
+              </p>
+              <p data-i18n="about.p2">
+                With years of stage experience, formal vocal training, and appearances at major
+                festivals, concert venues, and cultural events, Sofia creates polished live
+                performances for private events, sophisticated venues, and unforgettable evenings.
+                Each performance is shaped with musicality, warmth, and a distinct sense of
+                occasion.
+              </p>
+              <ul class="tag-list">
+                <li data-i18n="about.tag1">Live Jazz Performance</li>
+                <li data-i18n="about.tag2">Private Events</li>
+                <li data-i18n="about.tag3">Sophisticated Venues</li>
+              </ul>
+            </div>
+            <figure class="about-figure">
+              <img src="assets/images/about.jpg" alt="Portrait of Sofia in red stage lighting" loading="lazy" />
+            </figure>
+          </div>
+        </section>
+
+        <section class="media section" id="media">
+          <div class="section-inner">
+            <div class="section-heading">
+              <p class="section-kicker" data-i18n="media.kicker">Media</p>
+              <h2 data-i18n="media.heading">Media</h2>
+              <p class="section-intro" data-i18n="media.intro">
+                A curated selection of performance moments, stage highlights, and live atmosphere.
+              </p>
+            </div>
+
+            <figure class="featured-media">
+              <button
+                type="button"
+                class="media-trigger"
+                data-type="image"
+                data-src="assets/images/media-1.jpg"
+                data-alt="Sofia on stage in front of red curtains"
+              >
+                <img src="assets/images/media-1.jpg" alt="Sofia on stage in front of red curtains" loading="lazy" />
+              </button>
+            </figure>
+
+            <div class="video-card">
+              <div class="video-copy">
+                <p class="section-kicker" data-i18n="media.videoKicker">Video</p>
+                <h3 data-i18n="media.videoHeading">Selected live performance clip</h3>
+                <p data-i18n="media.videoBody">
+                  A direct performance moment from the stage.
+                </p>
+                <button
+                  type="button"
+                  class="button-secondary media-trigger"
+                  data-type="video"
+                  data-src="assets/video/media-1.mp4"
+                  data-poster="assets/images/video-poster.jpg"
+                  data-credit="Property of Mandarin Oriental Hotel Group Limited"
+                  data-i18n="media.videoCta"
+                >
+                  Watch Video
+                </button>
+                <p class="video-credit">Property of Mandarin Oriental Hotel Group Limited</p>
+              </div>
+              <button
+                type="button"
+                class="video-poster media-trigger"
+                data-type="video"
+                data-src="assets/video/media-1.mp4"
+                data-poster="assets/images/video-poster.jpg"
+                data-credit="Property of Mandarin Oriental Hotel Group Limited"
+                aria-label="Open performance video"
+              >
+                <img src="assets/images/video-poster.jpg" alt="Preview image for Sofia performance video" loading="lazy" />
+                <span class="play-badge">▶</span>
+              </button>
+            </div>
+
+            <div class="gallery-grid">
+              <button
+                type="button"
+                class="gallery-item media-trigger"
+                data-type="image"
+                data-src="assets/images/media-2.jpg"
+                data-alt="Sofia performing under warm golden lights"
+              >
+                <img src="assets/images/media-2.jpg" alt="Sofia performing under warm golden lights" loading="lazy" />
+              </button>
+              <button
+                type="button"
+                class="gallery-item media-trigger"
+                data-type="image"
+                data-src="assets/images/media-3.jpg"
+                data-alt="Sofia performing with a live ensemble"
+              >
+                <img src="assets/images/media-3.jpg" alt="Sofia performing with a live ensemble" loading="lazy" />
+              </button>
+              <button
+                type="button"
+                class="gallery-item media-trigger gallery-item-wide"
+                data-type="image"
+                data-src="assets/images/media-4.jpg"
+                data-alt="Sofia in a large stage performance with dancers"
+              >
+                <img src="assets/images/media-4.jpg" alt="Sofia in a large stage performance with dancers" loading="lazy" />
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact section" id="contact">
+          <div class="section-inner contact-grid">
+            <div class="section-copy">
+              <p class="section-kicker" data-i18n="contact.kicker">Contact</p>
+              <h2 data-i18n="contact.heading">Get in Touch</h2>
+              <p class="section-intro" data-i18n="contact.intro">
+                For bookings, private events, and elegant evenings.
+              </p>
+            </div>
+            <div class="contact-links">
+              <a href="https://www.instagram.com/sofia_musicofficial?igsh=c2Q2cDY3ZHhzNjI5" target="_blank" rel="noreferrer">
+                <span data-i18n="contact.instagram">Instagram</span>
+                <strong>@sofia_musicofficial</strong>
+              </a>
+              <a href="mailto:sofia.music.hk@gmail.com">
+                <span data-i18n="contact.email">Email</span>
+                <strong>sofia.music.hk@gmail.com</strong>
+              </a>
+              <a href="https://wa.me/85255995839" target="_blank" rel="noreferrer">
+                <span data-i18n="contact.whatsapp">WhatsApp</span>
+                <strong>+852 5599 5839</strong>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Sofia</p>
+        <div class="footer-links">
+          <a href="https://www.instagram.com/sofia_musicofficial?igsh=c2Q2cDY3ZHhzNjI5" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="mailto:sofia.music.hk@gmail.com">Email</a>
+          <a href="https://wa.me/85255995839" target="_blank" rel="noreferrer">WhatsApp</a>
+        </div>
+      </footer>
+    </div>
+
+    <dialog class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
+      <div class="lightbox-body" id="lightbox-body"></div>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
