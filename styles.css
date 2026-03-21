@@ -304,6 +304,19 @@ button {
   padding-top: 6.5rem;
 }
 
+.hero-content::after {
+  content: "";
+  position: absolute;
+  inset: auto auto -1rem -0.75rem;
+  width: min(100%, 22rem);
+  height: 14rem;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(9, 9, 9, 0), rgba(9, 9, 9, 0.22) 28%, rgba(9, 9, 9, 0.64));
+  backdrop-filter: blur(8px);
+  z-index: -1;
+  pointer-events: none;
+}
+
 .hero-divider {
   width: 4rem;
   height: 1px;
@@ -327,6 +340,7 @@ button {
   font-size: clamp(4rem, 23vw, 8rem);
   line-height: 0.9;
   font-weight: 600;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.38);
 }
 
 .hero-subtitle {
@@ -335,6 +349,7 @@ button {
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.6;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
 }
 
 .button-primary,
@@ -368,6 +383,16 @@ button {
   transform: translateX(-50%);
   color: var(--muted);
   text-decoration: none;
+  animation: floatHint 2.8s ease-in-out infinite;
+}
+
+@keyframes floatHint {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-0.28rem);
+  }
 }
 
 .section {
@@ -469,6 +494,7 @@ button {
   padding: 0.62rem 0.9rem;
   color: var(--muted);
   background: var(--surface-soft);
+  backdrop-filter: blur(8px);
 }
 
 .section-heading {
@@ -555,6 +581,37 @@ button {
   gap: 1rem;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.08s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.16s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.24s;
+}
+
+.reveal-delay-4 {
+  transition-delay: 0.32s;
+}
+
+.reveal-delay-5 {
+  transition-delay: 0.4s;
+}
+
 .contact-links {
   display: grid;
   gap: 0.9rem;
@@ -573,6 +630,12 @@ button {
 
 .contact-links strong {
   font-size: 1.05rem;
+}
+
+.contact-links small {
+  color: rgba(246, 239, 232, 0.54);
+  font-size: 0.84rem;
+  line-height: 1.5;
 }
 
 .site-footer {
@@ -757,6 +820,11 @@ button {
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   :root {

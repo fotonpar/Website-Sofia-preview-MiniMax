@@ -32,7 +32,10 @@ const translations = {
       intro: 'For bookings, private events, and elegant evenings.',
       instagram: 'Instagram',
       email: 'Email',
-      whatsapp: 'WhatsApp'
+      whatsapp: 'WhatsApp',
+      instagramMeta: 'Open profile',
+      emailMeta: 'Send an email',
+      whatsappMeta: 'Start WhatsApp chat'
     }
   },
   ru: {
@@ -68,7 +71,10 @@ const translations = {
       intro: 'Для букинга, частных мероприятий и красивых музыкальных вечеров.',
       instagram: 'Instagram',
       email: 'Email',
-      whatsapp: 'WhatsApp'
+      whatsapp: 'WhatsApp',
+      instagramMeta: 'Открыть профиль',
+      emailMeta: 'Написать письмо',
+      whatsappMeta: 'Открыть чат в WhatsApp'
     }
   },
   'zh-HK': {
@@ -104,7 +110,10 @@ const translations = {
       intro: '適合活動邀約、私人演出與高雅夜晚的現場音樂。',
       instagram: 'Instagram',
       email: '電郵',
-      whatsapp: 'WhatsApp'
+      whatsapp: 'WhatsApp',
+      instagramMeta: '開啟個人頁面',
+      emailMeta: '傳送電郵',
+      whatsappMeta: '開啟 WhatsApp 對話'
     }
   }
 };
@@ -118,6 +127,8 @@ const lightbox = document.getElementById('lightbox');
 const lightboxBody = document.getElementById('lightbox-body');
 const lightboxClose = document.getElementById('lightbox-close');
 const mediaTriggers = document.querySelectorAll('.media-trigger');
+const revealNodes = document.querySelectorAll('.reveal');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function getValue(obj, path) {
   return path.split('.').reduce((acc, part) => acc?.[part], obj);
@@ -187,6 +198,27 @@ function openVideo(src, poster, credit) {
   lightbox.showModal();
 }
 
+function initRevealObserver() {
+  if (!revealNodes.length) return;
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    revealNodes.forEach((node) => node.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.18, rootMargin: '0px 0px -8% 0px' }
+  );
+
+  revealNodes.forEach((node) => observer.observe(node));
+}
+
 menuToggle?.addEventListener('click', () => toggleMenu());
 siteMenu?.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => toggleMenu(false));
@@ -233,4 +265,5 @@ window.addEventListener('scroll', updateCurtains, { passive: true });
 window.addEventListener('resize', updateCurtains);
 
 applyLanguage(localStorage.getItem('website-sofia-lang') || 'en');
+initRevealObserver();
 updateCurtains();
